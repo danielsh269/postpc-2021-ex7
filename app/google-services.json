@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "798577137762",
+    "project_id": "postpc-2021-ex7-78bdd",
+    "storage_bucket": "postpc-2021-ex7-78bdd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:798577137762:android:124cf1ea2de81831bdd93b",
+        "android_client_info": {
+          "package_name": "com.example.givemesandwitch"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "798577137762-m1o6qhriuc16rndnqvllrkaa8j8u02r3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB280LcIqESdl4zNtCY9aKmpXhE38N6Hl4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "798577137762-m1o6qhriuc16rndnqvllrkaa8j8u02r3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
