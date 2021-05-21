@@ -10,16 +10,23 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class SandwichOrderApplication extends Application {
 
-    private static String orderId;
+    private static SandwichOrderApplication instance = null;
+    private String orderId;
     @Override
     public void onCreate() {
         super.onCreate();
         FirebaseApp.initializeApp(this);
+        instance = this;
+
         SharedPreferences sp = this.getSharedPreferences("local_db_orders", Context.MODE_PRIVATE);
         orderId = sp.getString("order_id", "");
     }
 
-    public static String getOrderId() {
+    public static SandwichOrderApplication getInstance()
+    {
+        return instance;
+    }
+    public String getOrderId() {
         return orderId;
     }
 }

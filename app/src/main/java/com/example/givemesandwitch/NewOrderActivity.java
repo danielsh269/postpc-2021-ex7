@@ -27,7 +27,7 @@ public class NewOrderActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_neworder);
-        sp = this.getSharedPreferences("local_db_orders", Context.MODE_PRIVATE);;
+        sp = SandwichOrderApplication.getInstance().getSharedPreferences("local_db_orders", Context.MODE_PRIVATE);
         hummusCheckbox = findViewById(R.id.hummusCheckbox);
         tahiniCheckbox = findViewById(R.id.tahiniCheckbox);
         nameText = findViewById(R.id.customerNameText);
