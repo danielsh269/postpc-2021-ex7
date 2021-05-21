@@ -106,6 +106,8 @@ public class EditOrderActivity extends AppCompatActivity {
         });
 
         Intent inProgressIntent = new Intent(this, OrderInProgressActivity.class);
+        Intent readyIntent = new Intent(this, OrderReadyActivity.class);
+
         listener = db.collection("orders").document(orderId)
                 .addSnapshotListener(new EventListener<DocumentSnapshot>() {
                     @Override
@@ -126,7 +128,8 @@ public class EditOrderActivity extends AppCompatActivity {
                             }
                             else if (status != null && status.equals("ready"))
                             {
-                                //TODO - open activity for ready status
+                                startActivity(readyIntent);
+                                finish();
                             }
                         }
                     }
