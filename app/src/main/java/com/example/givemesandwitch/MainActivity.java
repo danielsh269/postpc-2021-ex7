@@ -39,30 +39,36 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
-        Intent editOrderIntent = new Intent(this, EditOrderActivity.class);
-        Intent inProgressIntent = new Intent(this, OrderInProgressActivity.class);
-        Intent readyIntent = new Intent(this, OrderReadyActivity.class);
-        db.collection("orders").document(id).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-            @Override
-            public void onSuccess(DocumentSnapshot documentSnapshot) {
-                String status = documentSnapshot.getString("status");
-                if (status.equals("waiting"))
-                {
-                    startActivity(editOrderIntent);
-                    finish();
-                }
-                else if(status.equals("in-progress"))
-                {
-                    startActivity(inProgressIntent);
-                    finish();
-                }
-                else if(status.equals("ready"))
-                {
-                    startActivity(readyIntent);
-                    finish();
-                }
-            }
 
-        });
+        if (!id.equals(""))
+        {
+            Intent editOrderIntent = new Intent(this, EditOrderActivity.class);
+            Intent inProgressIntent = new Intent(this, OrderInProgressActivity.class);
+            Intent readyIntent = new Intent(this, OrderReadyActivity.class);
+
+            db.collection("orders").document(id).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                @Override
+                public void onSuccess(DocumentSnapshot documentSnapshot) {
+                    String status = documentSnapshot.getString("status");
+                    if (status.equals("waiting"))
+                    {
+                        startActivity(editOrderIntent);
+                        finish();
+                    }
+                    else if(status.equals("in-progress"))
+                    {
+                        startActivity(inProgressIntent);
+                        finish();
+                    }
+                    else if(status.equals("ready"))
+                    {
+                        startActivity(readyIntent);
+                        finish();
+                    }
+                }
+            });
+        }
+
     }
+
 }
